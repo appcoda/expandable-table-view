@@ -8,7 +8,7 @@
 
 import UIKit
 
-protocol CustomCellDelegate {
+protocol CustomCellDelegate: class {
     func dateWasSelected(selectedDateString: String)
     
     func maritalStatusSwitchChangedState(isOn: Bool)
@@ -46,7 +46,7 @@ class CustomCell: UITableViewCell, UITextFieldDelegate {
     
     // MARK: Variables
     
-    var delegate: CustomCellDelegate!
+    weak var delegate: CustomCellDelegate!
     
     
     override func awakeFromNib() {
